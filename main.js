@@ -59,7 +59,11 @@ for (let etappe of ETAPPEN) { //array objekt für objekt durchgehen
     //console.log(etappe.user);
     //console.log(etappe.nr);
     //console.log(etappe.title);
+    let selected = "";
+    if (etappe.nr == 8){
+        selected = "selected";
+    }
     pulldown.innerHTML += `
-    <option value = "${etappe.user}">Etappe ${etappe.nr}: ${etappe.titel}</option>
+    <option ${selected} value = "${etappe.user}">Etappe ${etappe.nr}: ${etappe.titel}</option>
     `;
 }
