@@ -59,6 +59,8 @@ for (let etappe of ETAPPEN) { //array objekt für objekt durchgehen
     //console.log(etappe.user);
     //console.log(etappe.nr);
     //console.log(etappe.title);
+
+    //eigene etappe im pulldown vorselektieren
     let selected = "";
     if (etappe.nr == 8){
         selected = "selected";
@@ -66,4 +68,10 @@ for (let etappe of ETAPPEN) { //array objekt für objekt durchgehen
     pulldown.innerHTML += `
     <option ${selected} value = "${etappe.user}">Etappe ${etappe.nr}: ${etappe.titel}</option>
     `;
+}
+
+//auf Wechsel in POulldown r(eagieren
+pulldown.onchange = function(evt){ //event
+    console.log(evt.target.value);
+    window.location.href = `https://${evt.target.value}.github.io/biketirol` //dort ist browser gerade
 }
