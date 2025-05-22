@@ -84,7 +84,15 @@ let controlElevation = L.control.elevation({
 }).addTo(map);
 controlElevation.load("data/etappe8.gpx");
 
+//Minimap
 var gkTirol = new L.TileLayer("https://wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png");
 var miniMap = new L.Control.MiniMap(gkTirol, {
     toogleDisplay: true
 }).addTo(map);
+
+
+//fullscreen
+const fullScreenControl = L.control.fullscreen();
+fullScreenControl.addTo(map)
+
+//oder map.addControl(new L.Control.Fullscreen());
